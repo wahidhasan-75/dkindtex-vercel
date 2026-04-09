@@ -30,7 +30,6 @@ export default function Navbar() {
     : 'bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100'
 
   const textColor = isHome && !scrolled ? 'text-white' : 'text-navy-900'
-  const logoColor = isHome && !scrolled ? 'filter brightness-0 invert' : ''
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${navBg}`}>
@@ -38,18 +37,12 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-18 py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div className={`flex items-center gap-2 transition-all duration-300`}>
-              {/* SVG Logo replicated from brand */}
-              <svg width="40" height="40" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Outer navy A-shape (filled, forms the border) */}
-                <polygon points="60,6 114,104 6,104" fill={isHome && !scrolled ? '#ffffff' : '#1a3a6e'}/>
-                {/* White inner cutout to create hollow A */}
-                <polygon points="60,22 100,96 20,96" fill={isHome && !scrolled ? '#0f2249' : '#ffffff'}/>
-                {/* Red solid triangle fill — the core brand mark */}
-                <polygon points="60,36 94,96 26,96" fill={isHome && !scrolled ? '#e8f0fe' : '#cc2200'}/>
-                {/* White horizontal bar across the A (crossbar) */}
-                <rect x="34" y="74" width="52" height="10" fill={isHome && !scrolled ? '#0f2249' : '#ffffff'}/>
-              </svg>
+            <div className="flex items-center gap-3 transition-all duration-300">
+              <img
+                src="/logo.png"
+                alt="DKIND TEX logo"
+                className={`h-20 w-auto object-contain transition-all duration-300 ${isHome && !scrolled ? 'brightness-0 invert' : ''}`}
+              />
               <div>
                 <div className={`font-sans font-bold text-xl leading-none tracking-widest transition-colors duration-300 ${isHome && !scrolled ? 'text-white' : 'text-[#1a3a6e]'}`}>
                   DKIND TEX
@@ -71,8 +64,10 @@ export default function Navbar() {
                   ${location.pathname === link.to ? 'opacity-100' : 'opacity-70 hover:opacity-100'}`}
               >
                 {link.label}
-                <span className={`absolute -bottom-1 left-0 h-px bg-current transition-all duration-300
-                  ${location.pathname === link.to ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+                <span
+                  className={`absolute -bottom-1 left-0 h-px bg-current transition-all duration-300
+                  ${location.pathname === link.to ? 'w-full' : 'w-0 group-hover:w-full'}`}
+                />
               </Link>
             ))}
             <Link

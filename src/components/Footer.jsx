@@ -11,16 +11,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <svg width="38" height="38" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="60,6 114,104 6,104" fill="#4a7abf"/>
-                <polygon points="60,22 100,96 20,96" fill="#0d1f3c"/>
-                <polygon points="60,36 94,96 26,96" fill="#cc2200"/>
-                <rect x="34" y="74" width="52" height="10" fill="#0d1f3c"/>
-              </svg>
-              <div>
-                <div className="font-sans font-bold text-lg text-white leading-none tracking-widest">DKIND TEX</div>
-                <div className="text-[10px] tracking-[0.20em] text-[#7aaae0] uppercase font-medium">Export &amp; Import</div>
-              </div>
+              <img
+                src="/logo.png"
+                alt="DKIND TEX logo"
+                className="h-20 w-auto object-contain brightness-0 invert"
+              />
             </div>
             <p className="text-white/50 text-sm leading-relaxed">
               A premier textile buying house and export-import company committed to quality sourcing, reliable execution, and long-term partnerships.
